@@ -6,6 +6,11 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
@@ -26,11 +31,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # 4️⃣ Build Vite app with GitHub Pages base :pizza:
+      # 4️⃣ Build Vite app with GitHub Pages base
       - name: Build
         run: npm run build -- --base /pizza-dough-calculator/
 
-      # 6️⃣ Deploy to gh-pages branch
+      # 5️⃣ Deploy to gh-pages branch
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
