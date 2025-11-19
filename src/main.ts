@@ -18,4 +18,28 @@ app.use(router);
 const i18n = setupI18n();
 app.use(i18n);
 
+// service worker for pwa
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js").then((reg) => {
+      console.log("Service Worker registered:", reg);
+
+      // Auto-update for new SW
+      reg.onupdatefound = () => {
+        const newWorker = reg.installing;
+        if (newWorker) {
+          newWorker.onstatechange = () => {
+            if (newWorker.state === "installed") {
+              if (navigator.serviceWorker.controller) {
+                // New update available, reload the page
+                window.location.reload();
+              }
+            }
+          };
+        }
+      };
+    });
+  });
+}
+
 app.mount("#app");

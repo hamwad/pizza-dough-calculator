@@ -30,7 +30,11 @@ jobs:
       - name: Build
         run: npm run build -- --base /pizza-dough-calculator/
 
-      # 5️⃣ Deploy to gh-pages branch
+      # 5️⃣ Copy service worker to root of dist
+      - name: Copy service worker
+        run: cp src/pwa/sw.ts dist/sw.js
+
+      # 6️⃣ Deploy to gh-pages branch
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v7
         with:
