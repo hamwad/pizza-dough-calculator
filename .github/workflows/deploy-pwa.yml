@@ -1,0 +1,40 @@
+name: Build & Deploy Pizza Dough Calculator PWA
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2️⃣ Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      # 3️⃣ Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # 4️⃣ Build Vite app
+      - name: Build
+        run: npm run build
+
+      # 5️⃣ Deploy to gh-pages branch
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v7
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          # optional: keep history for debugging
+          keep_files: false
