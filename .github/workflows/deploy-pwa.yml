@@ -1,3 +1,4 @@
+# .github/workflows/deploy-pwa.yml
 name: Build & Deploy Pizza Dough Calculator PWA
 
 on:
@@ -31,14 +32,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # 4️⃣ Build Vite app with GitHub Pages base
+      # 4️⃣ Build Vite app
       - name: Build
         run: npm run build -- --base /pizza-dough-calculator/
 
-      # 5️⃣ Deploy to gh-pages branch
+      # 5️⃣ Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           keep_files: false
+          nojekyll: true
