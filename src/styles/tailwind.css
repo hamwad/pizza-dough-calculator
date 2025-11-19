@@ -1,0 +1,8 @@
+@tailwindcss /preflight;
+@tailwind utilities;
+
+html,
+body,
+#app {
+  height: 100%;
+}

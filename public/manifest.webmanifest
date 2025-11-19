@@ -1,0 +1,9 @@
+{
+  "name": "Pizza Dough Calculator",
+  "short_name": "PizzaCalc",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffdf0",
+  "theme_color": "#335c67",
+  "icons": []
+}

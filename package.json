@@ -1,0 +1,38 @@
+{
+  "name": "pizza-dough-calculator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint --ext .ts,.vue src",
+    "typecheck": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.17",
+    "@vueuse/core": "^11.1.2",
+    "axios": "^1.7.4",
+    "daisyui": "^5.5.5",
+    "localforage": "^1.10.0",
+    "pinia": "^2.2.5",
+    "uuid": "^13.0.0",
+    "vue": "^3.5.11",
+    "vue-i18n": "^9.9.0",
+    "vue-router": "^4.4.3",
+    "vue-tsc": "^3.1.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@vitejs/plugin-vue": "^6.0.2",
+    "@vue/tsconfig": "^0.8.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.13.0",
+    "eslint-plugin-vue": "^9.28.1",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.8.1",
+    "vite": "^5.4.2",
+    "workbox-build": "^7.0.2"
+  }
+}
