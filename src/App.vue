@@ -4,7 +4,7 @@
   <div class="min-h-screen bg-base-100 text-neutral">
     <nav class="p-4 shadow-sm bg-primary text-base-100">
       <div class="container mx-auto flex items-center justify-between">
-        <h1 class="text-xl font-semibold">Pizza Dough Calculator</h1>
+        <h1 class="text-xl font-semibold">Pizza Dough Calculator :pizza:</h1>
         <div class="flex gap-2">
           <router-link to="/" class="btn btn-ghost">Calculator</router-link>
           <router-link to="/presets" class="btn btn-ghost">Presets</router-link>
