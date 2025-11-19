@@ -5,6 +5,7 @@ import { VitePWA } from "vite-plugin-pwa";
 import { fileURLToPath, URL } from "url";
 
 export default defineConfig({
+  base: "/pizza-dough-calculator/",
   plugins: [
     vue(),
     tailwindcss(),
