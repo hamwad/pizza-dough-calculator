@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import "./styles/main.css";
+</script>
 
 <template>
   <div class="min-h-screen bg-base-100 text-neutral">
